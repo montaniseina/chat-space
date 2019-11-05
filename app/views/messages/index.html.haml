@@ -1,16 +1,24 @@
-.header
-  .header__content
-.content
-  .content__left
-    .content__left--top
-      name
-      /
-      -# .content__left--top--name
-      -#   name
-    .content__left--foot
-      group
-  .content__right
-    .content__right--top
-      上だ
-    .content__right--foot
-      下だ
+!!!
+%html
+  %body
+    .header
+      .header__content
+    .content
+      .content__left
+        .content__left--top
+          .content__left--top--box
+            .content__left--top--box--name
+              もんちゃん
+            .content__left--top--box--edit
+              = fa_icon 'edit', class: "content__left--top--box--edit--editting"
+              = fa_icon 'cog', class: "content__left--top--box--edit--cog"
+        .content__left--group
+          .content__left--group--name
+            group
+          .content__left--group--latestmessage
+            初めまして
+      .content__right
+        .content__right--top
+          上だ
+        .content__right--foot
+          下だ

@@ -1,0 +1,86 @@
+.header{
+  &__content{
+    background-color: #38aef0;
+    width: 100vw;
+  }
+}
+.content{
+  color: white;
+  display: flex;
+  text-align: left;
+  &__left{
+    background-color: #253141;
+    width: 300px;
+    height: 100vw;
+    &--top{
+      padding: 0 20px;
+      align-items: center;
+      height: 100px;
+      background-color: #253141;
+      &--box{
+        position: absolute;
+        top: 38px;
+        width: 260px;
+        height: 24px;
+        // display: flex;
+        &--name{
+          display: block;
+          height: 24px;
+          width: 80px;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 24px;
+        }
+        &--edit{
+          text-align: center;
+          display: block;
+          border-radius: 10px;
+          line-height: 16px;
+          // display: flex;
+          position: absolute;
+          left: 200px;
+          bottom: 5px;
+          &--cog{
+            padding-left: 5px;
+          }
+        }
+      }
+      // &--name{
+      //   text-align: left;
+      // }
+    }
+    &--group{
+      padding: 20px;
+      background-color: #2d3e51;
+      font-size: 16px;
+      font-weight: bold;
+      height: 100vw;
+      margin: 0;
+      &--name{
+        font-size: 15px;
+        margin: 0 0 5px;
+      }
+      &--latestmessage{
+        font-size: 11px;
+      }
+      }
+  }
+  &__right{
+    color: black;
+    background-color: white;
+    height: 100vw;
+    width: calc(100vw - 300px);
+    &--top{
+      height: 100px;
+      background-color: white;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    &--foot{
+      height: calc(100vw - 100px);
+      background-color: #fafafa;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+}

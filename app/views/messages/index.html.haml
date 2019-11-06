@@ -9,9 +9,10 @@
           .content__left--top--box--name
             = current_user.name
           .content__left--top--box--edit
-            = fa_icon 'edit', class: "content__left--top--box--edit--editting"
-            = link_to edit_user_path(current_user) do
-              = fa_icon 'cog', class: "content__left--top--box--edit--cog"
+            = link_to new_group_path do
+              = fa_icon 'edit', class: "content__left--top--box--edit--editting"
+              = link_to edit_user_path(current_user) do
+                = fa_icon 'cog', class: "content__left--top--box--edit--cog"
       .content__left--group
         .content__left--group--name
           group

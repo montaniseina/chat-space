@@ -7,10 +7,11 @@
       .content__left--top
         .content__left--top--box
           .content__left--top--box--name
-            もんちゃん
+            = current_user.name
           .content__left--top--box--edit
             = fa_icon 'edit', class: "content__left--top--box--edit--editting"
-            = fa_icon 'cog', class: "content__left--top--box--edit--cog"
+            = link_to edit_user_path(current_user) do
+              = fa_icon 'cog', class: "content__left--top--box--edit--cog"
       .content__left--group
         .content__left--group--name
           group
@@ -22,14 +23,15 @@
           .content__right--top--left--groupname
             a
           .content__right--top--left--username
-            Member:もんちゃん
+            Member:
+            = current_user.name
         .content__right--top--editbtn
           Edit
       .content__right--low
         .content__right--low--main
           .content__right--low--main--upper
             .content__right--low--main--upper--username
-              もんちゃん
+              = current_user.name
             .content__right--low--main--upper--date
               2019/11/05(Tues)13:41:13
           .content__right--low--main--message

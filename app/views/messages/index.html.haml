@@ -13,11 +13,19 @@
               = fa_icon 'edit', class: "content__left--top--box--edit--editting"
               = link_to edit_user_path(current_user) do
                 = fa_icon 'cog', class: "content__left--top--box--edit--cog"
-      .content__left--group
-        .content__left--group--name
-          group
-        .content__left--group--latestmessage
-          初めまして
+      .content__left--groups
+        - current_user.groups.each do |group|
+          .content__left--groups--group
+            = link_to group_messages_path(group) do
+              .content__left--groups--group--name
+                = group.name
+              .content__left--groups--group--latestmessage
+                メッセージはありません。
+      -# .content__left--group
+      -#   .content__left--group--name
+      -#     group
+      -#   .content__left--group--latestmessage
+      -#     初めまして
     .content__right
       .content__right--top
         .content__right--top--left

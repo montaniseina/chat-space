@@ -136,33 +136,39 @@
           }
         }
       }
-      &--form{
+      .form{
         z-index: 1;
         background-color: #dddddd;
         position: fixed;
         bottom: 0;
-        width: calc(100vw - 300px);
+        width: 100vw;
         padding: 20px 40px;
         display: flex;
         box-sizing: border-box;
-        &--input{
+        height: 90px;
+        &__message{
           border-style: none;
           height: 50px;
-          width: 100%;
+          width: 100vh;
           padding: 0px 40px 0px 10px;
-          &--mask{
-            &--image{
-              &--icon{
-                font-size: 1.3rem;
-                position: absolute;
-                top: 35px;
-                right: 152px;
-                cursor: pointer;
-                }
-              }
+        }
+        &__mask{
+          &__image{
+            .icon{
+              font-size: 1.3rem;
+              position: absolute;
+              top: 35px;
+              right: 445px;
+            }
+            .hidden{
+              display: none;
             }
           }
-        &--submit{
+        }
+        &__submit{
+          position: absolute;
+          left: 715px;
+          bottom: 20px;
           color: white;
           padding: 0;
           margin-left: 15px;

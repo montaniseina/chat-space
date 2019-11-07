@@ -1,2 +1,37 @@
 .wrapper
   = render 'shared/side_bar'
+  -# .content__right
+  -#   .content__right--top
+  -#     .content__right--top--left
+  -#       .content__right--top--left--groupname
+  -#         a
+  -#       .content__right--top--left--username
+  -#         Member:
+  -#         = current_user.name
+  -#     .content__right--top--editbtn
+  -#       Edit
+  -#   .content__right--low
+  -#     .content__right--low--main
+  -#       .content__right--low--main--upper
+  -#         .content__right--low--main--upper--username
+  -#           = current_user.name
+  -#         .content__right--low--main--upper--date
+  -#           2019/11/05(Tues)13:41:13
+  -#       .content__right--low--main--message
+  -#         初めまして
+  -# .form
+  -#   = form_for [@group, @message] do |f|
+  -#     = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+  -#     .form__mask
+  -#       = f.label :image, class: 'form__mask__image' do
+  -#         = fa_icon 'picture-o', class: 'icon'
+  -#         = f.file_field :image, class: 'hidden'
+  -#     = f.submit 'Send', class: 'form__submit'
+    -# .content__right--form
+    -#   = form_for [@group, @message] do [f]
+    -#     =f.text_field :content, class: 'content__right--form--input', placeholder: 'type a message'
+    -#     .content__right--form--mask
+    -#       = f.label :image, class: 'content__right--form--input--mask--image' do
+    -#         = fa_icon 'picture-o', class: 'content__right--form--input--mask--image--icon'
+    -#         = f.file_field :image, class: 'content__sight--form--input--mask--image--hidden'
+    -#   = f.submit 'Send', class: 'content__right--form--submit'

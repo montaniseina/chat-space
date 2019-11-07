@@ -19,31 +19,29 @@
               .content__left--groups--group--name
                 = group.name
               .content__left--groups--group--latestmessage
-                メッセージはありません。
-      -# .content__left--group
-      -#   .content__left--group--name
-      -#     group
-      -#   .content__left--group--latestmessage
-      -#     初めまして
+                = group.show_last_message
     .content__right
       .content__right--top
         .content__right--top--left
           .content__right--top--left--groupname
-            a
+          = @group.name
           .content__right--top--left--username
-            Member:
-            = current_user.name
+            Member: 
+            - @group.users.each do |user|
+              = user.name
         .content__right--top--editbtn
-          Edit
-      .content__right--low
-        .content__right--low--main
-          .content__right--low--main--upper
-            .content__right--low--main--upper--username
-              = current_user.name
-            .content__right--low--main--upper--date
-              2019/11/05(Tues)13:41:13
-          .content__right--low--main--message
-            初めまして
+          = link_to 'Edit', edit_group_path(@group)
+      .messages
+        = render @messages
+      -# .content__right--low
+      -#   .content__right--low--main
+      -#     .content__right--low--main--upper
+      -#       .content__right--low--main--upper--username
+      -#         = current_user.name
+      -#       .content__right--low--main--upper--date
+      -#         2019/11/05(Tues)13:41:13
+      -#     .content__right--low--main--message
+      -#       初めまして
       .form
         = form_for [@group, @message] do |f|
           = f.text_field :content, class: 'form__message', placeholder: 'type a message'

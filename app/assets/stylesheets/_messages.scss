@@ -99,6 +99,7 @@
         }
         &--editbtn{
           text-align: center;
+          text-decoration: none;
           line-height: 40px;
           width: 72px;
           height: 40px;
@@ -107,32 +108,34 @@
           color: #38aef0;
         }
       }
-      &--low{
+      .messages{
         height: calc(100vw - 82px);
         background-color: #fafafa;
         border: 1px solid #eeeeee;
         padding: 40px;
-        &--main{
+        .message{
           height: 100px;
           padding: 0 0 40px;
-          &--upper{
+          .upper-message{
             display: flex;
             margin-bottom: 10px;
-            &--username{
+            &__user-name{
               font-weight: bold;
               font-size: 16px;
               color: #435a54;
             }
-            &--date{
+            &__date{
               font-size: 12px;
               margin: 0 0 0 12px;
               color: #999999;
             }
           }
-          &--message{
-            font-size: 14px;
-            color: #434a54;
-            margin: 0 0 10px;
+          .lower-message{
+            &__content{
+              font-size: 14px;
+              color: #434a54;
+              margin: 0 0 10px;
+            }
           }
         }
       }

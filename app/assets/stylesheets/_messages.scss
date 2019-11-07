@@ -150,21 +150,25 @@
           height: 50px;
           width: 100%;
           padding: 0px 40px 0px 10px;
-          &--image{
-            font-size: 1.3rem;
-            position: absolute;
-            top: 35px;
-            right: 152px;
-            cursor: pointer;
+          &--mask{
+            &--image{
+              &--icon{
+                font-size: 1.3rem;
+                position: absolute;
+                top: 35px;
+                right: 152px;
+                cursor: pointer;
+                }
+              }
+            }
           }
-          &--submit{
-            color: white;
-            padding: 0;
-            margin-left: 15px;
-            height: 50px;
-            width: 100px;
-            background-color: #38aef0;
-          }
+        &--submit{
+          color: white;
+          padding: 0;
+          margin-left: 15px;
+          height: 50px;
+          width: 100px;
+          background-color: #38aef0;
         }
       }
     }

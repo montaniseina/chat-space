@@ -152,7 +152,7 @@
         &__message{
           border-style: none;
           height: 50px;
-          width: 100vh;
+          width: calc(100vw - 525px);
           padding: 0px 40px 0px 10px;
         }
         &__mask{
@@ -170,7 +170,7 @@
         }
         &__submit{
           position: absolute;
-          left: 715px;
+          left: 69vw;
           bottom: 20px;
           color: white;
           padding: 0;

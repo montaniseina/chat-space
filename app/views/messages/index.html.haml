@@ -43,7 +43,7 @@
       -#     .content__right--low--main--message
       -#       初めまして
       .form
-        = form_for [@group, @message] do |f|
+        = form_for [@group, @message], html: {id: 'new_comment'} do |f|
           = f.text_field :content, class: 'form__message', placeholder: 'type a message'
           .form__mask
             = f.label :image, class: 'form__mask__image' do

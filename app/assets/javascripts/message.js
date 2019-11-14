@@ -38,7 +38,6 @@ $(function(){
     .done(function(form){
       var html = buildHTML(form);
       $('.messages').append(html);
-      $('.content').val('');
       $('.form__submit').prop('disabled', false);
       $('form')[0].reset();
     })

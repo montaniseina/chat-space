@@ -1,4 +1,6 @@
 $(function(){
+  last_message_id = $(this).last.id;
+  console.log(last_message_id);
   function buildHTML(message){
     var image = message.image? `<img src = ${message.image} ></img>` : "";
       var html = 

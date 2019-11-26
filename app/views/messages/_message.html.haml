@@ -1,12 +1,12 @@
 -# content__right.messages
 -# content__right--low
-.message
+.message{data: {message: {id: message.id}}}
   .upper-message
     .upper-message__user-name
       = message.user.name
     .upper-message__date
       = message.created_at.strftime("%Y/%m/%d %H:%M")
-  .lower-message
+  .lower-message.div
     - if message.content.present?
       %p.lower-message__content
         = message.content

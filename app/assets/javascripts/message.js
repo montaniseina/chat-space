@@ -1,27 +1,28 @@
 $(function(){
-  function buildHTML(message){
-    var image = message.image? `<img src = ${message.image} ></img>` : "";
-      var html = 
-                  `<div class="message" data-message-id=${message.id}>
-                  <div class="upper-message">
-                    <div class="upper-message__user-name">
+  var buildMessageHTML = function(message){
+    let image = ( message.image ) ? `<img class= "lower-message__image" src=${message.image} >` : "";
+
+    let html = `<div class="message", data-message-id="${message.id}">
+
+
+                    <div class="upper-message">
+                      <div class="upper-message__user-name">
                       ${message.name}
-                    </div>
-                    <div class="upper-message__date">
+                      </div>
+                      <div class="upper-message__date">
                       ${message.created_at}
+                      </div>
                     </div>
-                  </div>
-                  <div class="lower-message">
-                    <p class="lower-message__content">
-                      <a>${message.content}</a>
-                    </p>
-                    <div>
+                    <div class="lower-message">
+                      <p class="lower-message__content">
+                      ${message.content}
+                      </p>
                       ${image}
                     </div>
-                  </div>`
-    return html;
-  }
-  
+                  </div> `
+  $('.messages').append(html);
+  };
+    
 
   $('#new_comment').on('submit', function(e){
     e.preventDefault();
@@ -36,13 +37,37 @@ $(function(){
       contentType: false
     })
     .done(function(form){
-      var html = buildHTML(form);
+      var html = buildMessageHTML(form);
       $('.messages').append(html);
       $('.form__submit').prop('disabled', false);
       $('form')[0].reset();
+      $('messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
     })
     .fail(function(){
       alert('error');
     })
   })
-})
+  if(window.location.href.match(/\/groups\/\d+\/messages/)){
+    var reloadMessages = function(){
+      last_message_id = $(".message:last").data("message-id");
+      $.ajax({
+        url: "../api/messages",
+        type: 'GET',
+        dataType: 'json',
+        data:{id:last_message_id}
+      })
+      .done(function(messages){
+        var insertHTML = '';
+        messages.forEach(function(message){
+          insertHTML = buildMessageHTML(message);
+        })
+      })
+      .fail(function(){
+        alert("fails");
+      });
+    }
+  };
+  setInterval(reloadMessages, 7000);
+  })
+
+

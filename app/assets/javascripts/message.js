@@ -22,28 +22,7 @@ $(function(){
                   </div> `
   $('.messages').append(html);
   };
-    // var image = message.image? `<img src = ${message.image} ></img>` : "";
-    //   var html = 
-    //               `<div class="message" data-message-id=${message.id}>
-    //               <div class="upper-message">
-    //                 <div class="upper-message__user-name">
-    //                   ${message.name}
-    //                 </div>
-    //                 <div class="upper-message__date">
-    //                   ${message.created_at}
-    //                 </div>
-    //               </div>
-    //               <div class="lower-message">
-    //                 <p class="lower-message__content">
-    //                   <a>${message.content}</a>
-    //                 </p>
-    //                 <div>
-    //                   ${image}
-    //                 </div>
-    //               </div>`
-    // return html;
-  
-  
+    
 
   $('#new_comment').on('submit', function(e){
     e.preventDefault();
@@ -71,7 +50,6 @@ $(function(){
   if(window.location.href.match(/\/groups\/\d+\/messages/)){
     var reloadMessages = function(){
       last_message_id = $(".message:last").data("message-id");
-      // console.log(location.href);
       $.ajax({
         url: "../api/messages",
         type: 'GET',
@@ -79,7 +57,6 @@ $(function(){
         data:{id:last_message_id}
       })
       .done(function(messages){
-        // console.log('success');
         var insertHTML = '';
         messages.forEach(function(message){
           insertHTML = buildMessageHTML(message);

@@ -64,7 +64,6 @@ $(function(){
       })
       .fail(function(){
         alert("fails");
-        console.log('fails');
       });
     }
   };
